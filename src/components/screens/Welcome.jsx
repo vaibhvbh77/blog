@@ -1,4 +1,3 @@
-import "/Users/test/Desktop/Assignement/blog/src/App.css";
 import Form from "./Form";
 const Welcome = () => {
   return (

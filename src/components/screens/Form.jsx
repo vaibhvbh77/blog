@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
-import Modal from "/Users/test/Desktop/Assignement/blog/src/components/Modal.jsx";
-import classes from "/Users/test/Desktop/Assignement/blog/src/components/screens/AddUser.module.css";
+// import Modal from "/Users/test/Desktop/Assignement/blog/src/components/Modal.jsx";
+import Modal from "../Modal";
+
 const Form = (props) => {
   const reduxId = useSelector((state) => {
     return state.id;

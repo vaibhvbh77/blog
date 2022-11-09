@@ -1,4 +1,4 @@
-import classes from "/Users/test/Desktop/Assignement/blog/src/components/ErrorModal.module.css";
+import classes from "./ErrorModal.module.css";
 import Card from "./Card";
 const Modal = (props) => {
   return (

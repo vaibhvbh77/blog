@@ -7,7 +7,7 @@ import Nav from "./components/Nav";
 import Form from "./components/screens/Form";
 import Listing from "./components/screens/Listing";
 import User from "./components/screens/User";
-import "/Users/test/Desktop/Assignement/blog/src/App.css";
+import "./App.css";
 import Welcome from "./components/screens/Welcome";
 
 const App = () => {

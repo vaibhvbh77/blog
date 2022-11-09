@@ -5,7 +5,8 @@ import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import AddNewPost from "../AddNewPost";
 import ListingAlbums from "../ListingAlbums";
 import User from "./User";
-import classes from "/Users/test/Desktop/Assignement/blog/src/components/screens/List.module.css";
+import classes from "./List.module.css";
+
 const Listing = (props) => {
   const location = useLocation();
   const userId = location.state.userId;

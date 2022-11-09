@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import Modal from "./Modal";
-import classes from "/Users/test/Desktop/Assignement/blog/src/components/screens/AddPost.module.css";
+import classes from "./screens/AddPost.module.css";
 const AddNewPost = (props) => {
   const [title, setTitle] = useState("");
   const [body, setbody] = useState("");

@@ -1,9 +1,9 @@
-import classes from "/Users/test/Desktop/Assignement/blog/src/components/screens/User.module.css";
+import classes from "./User.module.css";
 const User = (props) => {
   return (
     <li className={classes.movie}>
-      <h1>{props.title}</h1>
-      <h5>{props.body}</h5>
+      <h1>Title: {props.title}</h1>
+      <h5>Post: {props.body}</h5>
     </li>
   );
 };
