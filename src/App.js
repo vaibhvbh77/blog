@@ -13,9 +13,6 @@ import Welcome from "./components/screens/Welcome";
 const App = () => {
   return (
     <Card>
-      {/* <hi>This is the home page</hi> */}
-      {/* <NavBar /> */}
-
       <Switch>
         <Route path="/" exact>
           <Welcome />

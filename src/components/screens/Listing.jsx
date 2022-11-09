@@ -1,13 +1,22 @@
 import React, { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import AddNewPost from "../AddNewPost";
+import ListingAlbums from "../ListingAlbums";
 import User from "./User";
 import classes from "/Users/test/Desktop/Assignement/blog/src/components/screens/List.module.css";
 const Listing = (props) => {
   const location = useLocation();
   const userId = location.state.userId;
   const history = useHistory();
+
+  const [showList, setShowList] = useState(false);
+  const [showAlbum, setShowAlbum] = useState(false);
+
+  const reduxId = useSelector((state) => {
+    return state.id;
+  });
 
   const [showNewUser, setNewUser] = useState(false);
 
@@ -37,15 +46,16 @@ const Listing = (props) => {
   return (
     <>
       <h1>Welcome to the Posts Page. </h1>
-      <h2>Your user id is :{userId}</h2>
+      <h2>Your user id is :{reduxId}</h2>
       <button
-        onClick={() => {
-          return setNewUser((prev) => {
+        style={{ marginRight: "15px" }}
+        onClick={() =>
+          setShowAlbum((prev) => {
             return !prev;
-          });
-        }}
+          })
+        }
       >
-        Add new post
+        Show Album
       </button>
 
       <button
@@ -55,21 +65,45 @@ const Listing = (props) => {
       >
         Log out
       </button>
+      <br></br>
+      <br></br>
 
+      <button
+        style={{ marginRight: "15px" }}
+        onClick={() =>
+          setShowList((prev) => {
+            return !prev;
+          })
+        }
+      >
+        Show Post
+      </button>
+      {showList && (
+        <button
+          style={{ marginRight: "15px" }}
+          onClick={() => {
+            return setNewUser((prev) => {
+              return !prev;
+            });
+          }}
+        >
+          Add new post
+        </button>
+      )}
       {showNewUser && <AddNewPost onAdd={AddHandler} />}
 
       {loading && <p>Loading...</p>}
-      <ol className={classes["movies-list"]}>
-        {user.map((curr) => {
-          return (
-            <User title={curr.title} body={curr.body} key={curr.id}></User>
-            // <li key={curr.id}>
-            //   <h1>{curr.title}</h1>
-            //   <h5>{curr.body}</h5>
-            // </li>
-          );
-        })}
-      </ol>
+
+      {showAlbum && <ListingAlbums />}
+      {showList && (
+        <ol className={classes["movies-list"]}>
+          {user.map((curr) => {
+            return (
+              <User title={curr.title} body={curr.body} key={curr.id}></User>
+            );
+          })}
+        </ol>
+      )}
     </>
   );
 };

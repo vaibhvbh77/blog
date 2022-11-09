@@ -1,21 +1,22 @@
 import classes from "/Users/test/Desktop/Assignement/blog/src/components/ErrorModal.module.css";
 import Card from "./Card";
-const Modal = () => {
+const Modal = (props) => {
   return (
     <div>
       <div className={classes.backdrop} />
-      <Card className={classes.modal}>
+      <div className={classes.modal}>
         <header className={classes.header}>
-          <h2>Error Ocured</h2>
+          <h2>{props.title}</h2>
         </header>
         <div className={classes.content}>
-          <p>You have entered an incorrect email.</p>
+          <p>{props.message}</p>
         </div>
         <footer className={classes.actions}>
-          <button>Try Again</button>
+          <button onClick={props.onOkay}>Try Again</button>
         </footer>
-      </Card>
+      </div>
     </div>
   );
 };
+
 export default Modal;
